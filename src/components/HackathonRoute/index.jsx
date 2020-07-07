@@ -16,40 +16,40 @@ function HackathonRoute({ match }) {
                 </div>
                 <div className="side-bar-container">
                     <div className="nav-links col">
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Informações básicas
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Entregáveis
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Habilidades
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Programação
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Planejamento de divulgação
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Critérios de avaliação
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Desafio
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Premiação
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Marketing
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Regulamento
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             F.A.Q.
                         </a>
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="/#">
                             Formulário de inscrição
                         </a>
                     </div>

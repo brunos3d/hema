@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import "./App.css";
+
+import { Container } from "./styles";
+
 import Home from "./components/HomeRoute";
 import HackathonRoute from "./components/HackathonRoute";
 import HackathonCreateRoute from "./components/HackathonCreateRoute";
@@ -8,11 +10,13 @@ import HackathonCreateRoute from "./components/HackathonCreateRoute";
 function App() {
     return (
         <BrowserRouter>
-            <div className="App">
+            <Container>
                 <header className="App-header">
-                    <Link className="App-link" to="/">
-                        HEMA
-                    </Link>
+                    <div className="rule">
+                        <Link className="App-link" to="/">
+                            <img className="hema-logo" src={`${process.env.PUBLIC_URL}/img/3-HEMA-BRANCO.png`} alt="hema-logo" />
+                        </Link>
+                    </div>
                 </header>
                 <Switch>
                     <Route path="/hackathons/create">
@@ -23,7 +27,7 @@ function App() {
                         <Home />
                     </Route>
                 </Switch>
-            </div>
+            </Container>
         </BrowserRouter>
     );
 }

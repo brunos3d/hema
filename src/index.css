@@ -7,3 +7,22 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+    --grey-color: #242424;
+    --pink-color: #d12053;
+    --green-color: #16b42e;
+    --primary-color: #ff7350;
+    --secondary-color: #97338b;
+    --bkg-color: #ededed;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
