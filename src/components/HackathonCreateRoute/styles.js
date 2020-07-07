@@ -31,27 +31,45 @@ export const Container = styled.div`
 
     .input-text {
         flex: 1;
-        border: none;
         margin: 10px 0;
         border-radius: 20px;
         padding: 10px 20px;
+
+        outline: none;
 
         font-size: 1.25rem;
 
         background-color: #fff;
         color: var(--grey-color);
+
+        transition: 0.3s all;
+        border: 2px solid var(--bkg-color);
+    }
+
+    .input-text:hover,
+    .input-text:focus {
+        border: 2px solid var(--pink-color);
     }
 
     .input-event-type {
         flex: 1;
-        border: none;
         padding: 20px;
         border-radius: 20px;
 
         font-size: 1.25rem;
 
+        outline: none;
+
         color: var(--grey-color);
         background-color: #fff;
+
+        transition: 0.3s all;
+        border: 2px solid var(--bkg-color);
+    }
+
+    .input-event-type:hover,
+    .input-event-type:active {
+        border: 2px solid var(--pink-color);
     }
 
     .input-event-type.active {

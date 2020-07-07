@@ -40,6 +40,14 @@ export const Container = styled.div`
 
         color: #444;
         background-color: var(--bkg-color);
+
+        transition: 0.3s all;
+        border: 2px solid var(--bkg-color);
+    }
+
+    .search:hover,
+    .search:focus {
+        border: 2px solid var(--pink-color);
     }
 
     .btn-create-event {
@@ -49,19 +57,29 @@ export const Container = styled.div`
         border-radius: 20px;
         font-size: 1.5rem;
 
+        outline: none;
         text-decoration: none;
 
         color: #fff;
         background-color: var(--primary-color);
+
+        transition: 0.3s all;
+        border: 2px solid var(--bkg-color);
+    }
+
+    .btn-create-event:hover {
+        border: 2px solid var(--pink-color);
     }
 
     .event-card {
-        flex: 1;
-        width: 225px;
+        width: 270px;
         height: 200px;
         margin: 10px;
         padding: 15px;
         border-radius: 20px;
+
+        cursor: pointer;
+        text-decoration: none;
 
         display: flex;
         flex-wrap: wrap;
@@ -71,6 +89,13 @@ export const Container = styled.div`
 
         color: var(--grey-color);
         background-color: var(--bkg-color);
+
+        transition: 0.3s all;
+        border: 2px solid var(--bkg-color);
+    }
+
+    .event-card:hover {
+        border: 2px solid var(--pink-color);
     }
 
     .event-card h1 {

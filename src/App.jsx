@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./components/HomeRoute";
+import HackathonRoute from "./components/HackathonRoute";
 import HackathonCreateRoute from "./components/HackathonCreateRoute";
 
 function App() {
@@ -14,12 +15,10 @@ function App() {
                     </Link>
                 </header>
                 <Switch>
-                    <Route path="/hackathon/create">
+                    <Route path="/hackathons/create">
                         <HackathonCreateRoute />
                     </Route>
-                    <Route path="/users">
-                        <h1>users</h1>
-                    </Route>
+                    <Route path="/hackathons/:id" component={HackathonRoute} />
                     <Route path="/">
                         <Home />
                     </Route>

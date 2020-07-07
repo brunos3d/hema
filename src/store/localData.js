@@ -1,3 +1,91 @@
+const defaultData = [
+    {
+        name: "Mega Hack 3.0",
+        imgUrl: "MEGA-HACK.png",
+        startSubDate: "2020-07-01",
+        endSubDate: "2020-07-01",
+        startDate: "2020-07-09",
+        endDate: "2020-07-09",
+        minRankPoints: "500",
+        issuer: "",
+        director: "",
+        objective: "",
+        minParticipantsTeam: "",
+        award: ["", "", ""],
+        eventType: "hackathon",
+        useRankPoints: true,
+        hasMinParticipantsTeam: false,
+    },
+    {
+        name: "Hackathon Santander",
+        imgUrl: "SANTANDER-DATA-CHALLENGE.png",
+        startSubDate: "2020-07-09",
+        endSubDate: "2020-07-16",
+        startDate: "2020-07-17",
+        endDate: "2020-07-24",
+        minRankPoints: "500",
+        issuer: "",
+        director: "",
+        objective: "",
+        minParticipantsTeam: "",
+        award: ["", "", ""],
+        eventType: "hackathon",
+        useRankPoints: false,
+        hasMinParticipantsTeam: false,
+    },
+    {
+        name: "Hacka TecBan",
+        imgUrl: "TECBAN.png",
+        startSubDate: "2020-07-18",
+        endSubDate: "2020-07-31",
+        startDate: "2020-07-30",
+        endDate: "2020-08-13",
+        minRankPoints: "200",
+        issuer: "",
+        director: "",
+        objective: "",
+        minParticipantsTeam: "",
+        award: ["", "", ""],
+        eventType: "ideathon",
+        useRankPoints: true,
+        hasMinParticipantsTeam: false,
+    },
+    {
+        name: "Desafio Eugene Challenge",
+        imgUrl: "EUGENIO.png",
+        startSubDate: "2020-07-11",
+        endSubDate: "2020-07-15",
+        startDate: "2020-07-23",
+        endDate: "2020-07-27",
+        minRankPoints: "200",
+        issuer: "",
+        director: "",
+        objective: "",
+        minParticipantsTeam: "",
+        award: ["", "", ""],
+        eventType: "datathon",
+        useRankPoints: true,
+        hasMinParticipantsTeam: false,
+    },
+    {
+        name: "Hacka A Rocket",
+        imgUrl: "HACK-A-ROCKET.png",
+        startSubDate: "2020-07-11",
+        endSubDate: "2020-07-15",
+        startDate: "2020-07-23",
+        endDate: "2020-07-27",
+        minRankPoints: "200",
+        issuer: "",
+        director: "",
+        objective: "",
+        minParticipantsTeam: "",
+        award: ["", "", ""],
+        eventType: "datathon",
+        useRankPoints: true,
+        hasMinParticipantsTeam: false,
+    },
+];
+
 export function getEvents() {
     const localData = localStorage.getItem("events");
 
@@ -6,10 +94,10 @@ export function getEvents() {
         if (Array.isArray(events)) {
             return events;
         } else {
-            return [];
+            return defaultData;
         }
     } else {
-        return [];
+        return defaultData;
     }
 }
 
