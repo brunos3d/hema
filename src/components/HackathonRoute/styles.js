@@ -49,4 +49,11 @@ export const Container = styled.div`
         font-size: 1.25rem;
         margin-top: 10px;
     }
+
+    .event-container {
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+    }
 `;

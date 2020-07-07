@@ -12,10 +12,15 @@ const HomeRoute = () => {
 
     useEffect(() => {
         const trimmedSearch = search.trim();
+        const updatedEvents = getEvents();
         if (trimmedSearch.length > 0) {
-            setEvents((events) => events.filter((event) => event.name.toUpperCase().includes(trimmedSearch.toUpperCase())));
+            setEvents(
+                updatedEvents.filter(
+                    (event) => Object.values(event).filter((value) => value.toString().toUpperCase().includes(trimmedSearch.toUpperCase())).length > 0
+                )
+            );
         } else {
-            setEvents(getEvents());
+            setEvents(updatedEvents);
         }
     }, [search]);
 
