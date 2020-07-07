@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     .side-bar {
         width: 400px;
-        height: calc(100vh - 64px);
+        min-height: calc(100vh - 64px);
         background-color: var(--bkg-color);
     }
 
@@ -51,9 +51,73 @@ export const Container = styled.div`
     }
 
     .event-container {
+        flex: 1;
         padding: 30px;
 
         display: flex;
         flex-direction: column;
+    }
+
+    .fact-title {
+        color: var(--grey-color);
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .btn-edit {
+        border: none;
+        padding: 20px;
+        border-radius: 20px;
+
+        text-decoration: none;
+
+        font-size: 1.25rem;
+
+        color: var(--grey-color);
+        background-color: var(--bkg-color);
+
+        transition: 0.3s all;
+        border: 2px solid var(--bkg-color);
+    }
+
+    .btn-edit:hover {
+        border: 2px solid var(--pink-color);
+    }
+
+    .card-section {
+        flex: 1;
+        margin: 15px 15px;
+        padding: 30px;
+        border-radius: 20px;
+        border: 2px solid var(--bkg-color);
+
+        & h1 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            color: var(--pink-color);
+        }
+
+        & h2 {
+            margin: 20px 0 10px 0;
+            font-size: 1.5rem;
+            color: var(--grey-color);
+        }
+    }
+
+    .event-type-badge {
+        margin-left: 10px;
+        padding: 5px;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: normal;
+        border-radius: 20px;
+        background-color: var(--pink-color);
+    }
+
+    .info-label,
+    .info-value {
+        margin: 10px 0;
+        font-size: 1.25rem;
+        color: var(--grey-color);
     }
 `;

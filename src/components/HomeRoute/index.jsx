@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import moment from "moment";
-import "moment/locale/pt-br";
 import { Container } from "./styles";
 
+import moment from "../../store/moment";
 import { getEvents } from "../../store/localData";
 
 const HomeRoute = () => {

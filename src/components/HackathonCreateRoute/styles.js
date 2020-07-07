@@ -96,5 +96,12 @@ export const Container = styled.div`
 
         color: #fff;
         background-color: var(--green-color);
+
+        transition: 0.3s all;
+        border: 2px solid var(--bkg-color);
+    }
+
+    .btn-create-hackathon:hover {
+        border: 2px solid var(--pink-color);
     }
 `;

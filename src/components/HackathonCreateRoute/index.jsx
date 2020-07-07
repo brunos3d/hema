@@ -69,21 +69,21 @@ const HackathonCreateRoute = () => {
                         <div className="row" style={{ marginTop: "20px" }}>
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "10px" }}>Início das inscrições</span>
-                                <Input className="input-text" name="startSubDate" type="date" />
+                                <Input className="input-text" name="startSubDate" type="datetime" />
                             </div>
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "20px" }}>Encerramento das inscrições</span>
-                                <Input className="input-text" name="endSubDate" type="date" style={{ marginLeft: "10px" }} />
+                                <Input className="input-text" name="endSubDate" type="datetime" style={{ marginLeft: "10px" }} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "10px" }}>Início do hacakthon</span>
-                                <Input className="input-text" name="startDate" type="date" />
+                                <Input className="input-text" name="startDate" type="datetime" />
                             </div>
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "20px" }}>Encerramento do hacakthon</span>
-                                <Input className="input-text" name="endDate" type="date" style={{ marginLeft: "10px" }} />
+                                <Input className="input-text" name="endDate" type="datetime" style={{ marginLeft: "10px" }} />
                             </div>
                         </div>
 
