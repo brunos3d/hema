@@ -69,9 +69,15 @@ function HackathonRoute({ match }) {
                             <span className="fact-title">Fact Check</span>
                         </div>
                         <div className="col" style={{ justifyContent: "center", marginRight: "30px" }}>
-                            <Link className="btn-edit" to="/">
-                                Editar
-                            </Link>
+                            <div className="row">
+                                <Link className="btn-faq" to={`${match.url}/faq`}>
+                                    F.A.Q.
+                                </Link>
+
+                                <Link className="btn-edit" to="/" style={{ marginLeft: "20px" }}>
+                                    Editar
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
@@ -196,11 +202,21 @@ function HackathonRoute({ match }) {
                             <div className="card-section" id="planning">
                                 <h1>Planejamento de divulgação</h1>
                                 <div className="col">
-                                    <span className="info-label">Abertura:</span>
-                                    <span className="info-label">Reforço inscrição:</span>
-                                    <span className="info-label">Reforço desafio:</span>
-                                    <span className="info-label">Premiação:</span>
-                                    <span className="info-label">Encerramento:</span>
+                                    <span className="info-label">
+                                        Abertura:<span className="info-value">{targetEvent.startDate.format("LLL")}</span>
+                                    </span>
+                                    <span className="info-label">
+                                        Reforço inscrição:<span className="info-value">{targetEvent.startDate.format("LLL")}</span>
+                                    </span>
+                                    <span className="info-label">
+                                        Reforço desafio:<span className="info-value">{targetEvent.startDate.format("LLL")}</span>
+                                    </span>
+                                    <span className="info-label">
+                                        Premiação:<span className="info-value">{targetEvent.startDate.format("LLL")}</span>
+                                    </span>
+                                    <span className="info-label">
+                                        Encerramento:<span className="info-value">{targetEvent.startDate.format("LLL")}</span>
+                                    </span>
                                 </div>
                             </div>
                         </div>

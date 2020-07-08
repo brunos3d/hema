@@ -6,6 +6,7 @@ import { Container } from "./styles";
 import Home from "./components/HomeRoute";
 import HackathonRoute from "./components/HackathonRoute";
 import HackathonCreateRoute from "./components/HackathonCreateRoute";
+import FaqRoute from "./components/FaqRoute";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/hackathons/create">
                         <HackathonCreateRoute />
                     </Route>
+                    <Route path="/hackathons/:id/faq" component={FaqRoute} />
                     <Route path="/hackathons/:id" component={HackathonRoute} />
                     <Route path="/">
                         <Home />

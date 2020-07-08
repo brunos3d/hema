@@ -64,7 +64,8 @@ export const Container = styled.div`
         font-weight: bold;
     }
 
-    .btn-edit {
+    .btn-edit,
+    .btn-faq {
         border: none;
         padding: 20px;
         border-radius: 20px;
@@ -80,7 +81,8 @@ export const Container = styled.div`
         border: 2px solid var(--bkg-color);
     }
 
-    .btn-edit:hover {
+    .btn-edit:hover,
+    .btn-faq:hover {
         border: 2px solid var(--pink-color);
     }
 
@@ -106,7 +108,7 @@ export const Container = styled.div`
 
     .event-type-badge {
         margin-left: 10px;
-        padding: 5px;
+        padding: 5px 10px;
         color: #fff;
         font-size: 1rem;
         font-weight: normal;
