@@ -114,6 +114,13 @@ export const Container = styled.div`
         background-color: var(--pink-color);
     }
 
+    .info-value {
+        font-weight: bold;
+    }
+    .info-label {
+        font-weight: normal;
+    }
+
     .info-label,
     .info-value {
         margin: 10px 0;

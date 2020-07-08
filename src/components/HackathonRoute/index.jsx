@@ -9,6 +9,11 @@ import { getEvents } from "../../store/localData";
 function HackathonRoute({ match }) {
     const targetEvent = getEvents()[match.params.id];
 
+    targetEvent.startDate = moment(targetEvent.startDate);
+    targetEvent.endDate = moment(targetEvent.endDate);
+    targetEvent.startSubDate = moment(targetEvent.startSubDate);
+    targetEvent.endSubDate = moment(targetEvent.endSubDate);
+
     return (
         <Container>
             <div className="row">
@@ -19,42 +24,42 @@ function HackathonRoute({ match }) {
                     </div>
                     <div className="side-bar-container">
                         <div className="nav-links col">
-                            <Link className="nav-link" to="#info">
+                            <a className="nav-link" href={`${match.url}#info`}>
                                 Informações básicas
-                            </Link>
-                            <Link className="nav-link" to="#deliverable">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#deliverable`}>
                                 Entregáveis
-                            </Link>
-                            <Link className="nav-link" to="#roles">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#roles`}>
                                 Habilidades
-                            </Link>
-                            <Link className="nav-link" to="#schedule">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#schedule`}>
                                 Programação
-                            </Link>
-                            <Link className="nav-link" to="#planning">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#planning`}>
                                 Planejamento de divulgação
-                            </Link>
-                            <Link className="nav-link" to="#">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#`}>
                                 Critérios de avaliação
-                            </Link>
-                            <Link className="nav-link" to="#">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#`}>
                                 Desafio
-                            </Link>
-                            <Link className="nav-link" to="#">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#`}>
                                 Premiação
-                            </Link>
-                            <Link className="nav-link" to="#">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#`}>
                                 Marketing
-                            </Link>
-                            <Link className="nav-link" to="#">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#`}>
                                 Regulamento
-                            </Link>
-                            <Link className="nav-link" to="#">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#`}>
                                 F.A.Q.
-                            </Link>
-                            <Link className="nav-link" to="#">
+                            </a>
+                            <a className="nav-link" href={`${match.url}#`}>
                                 Formulário de inscrição
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -80,19 +85,18 @@ function HackathonRoute({ match }) {
                             <div className="row">
                                 <div className="col" style={{ flex: 1 }}>
                                     <span className="info-label">
-                                        Início das inscrições: <span className="info-value">{moment(targetEvent.startSubDate).format("LLL")}</span>
+                                        Início das inscrições: <span className="info-value">{targetEvent.startSubDate.format("LLL")}</span>
                                     </span>
                                     <span className="info-label">
-                                        Início do hacakthon: <span className="info-value">{moment(targetEvent.startDate).format("LLL")}</span>
+                                        Início do hacakthon: <span className="info-value">{targetEvent.startDate.format("LLL")}</span>
                                     </span>
                                 </div>
                                 <div className="col" style={{ flex: 1 }}>
                                     <span className="info-label">
-                                        Encerramento das inscrições:{" "}
-                                        <span className="info-value">{moment(targetEvent.endSubDate).format("LLL")}</span>
+                                        Encerramento das inscrições: <span className="info-value">{targetEvent.endSubDate.format("LLL")}</span>
                                     </span>
                                     <span className="info-label">
-                                        Encerramento do hacakthon: <span className="info-value">{moment(targetEvent.endDate).format("LLL")}</span>
+                                        Encerramento do hacakthon: <span className="info-value">{targetEvent.endDate.format("LLL")}</span>
                                     </span>
                                 </div>
                             </div>
@@ -137,13 +141,49 @@ function HackathonRoute({ match }) {
                             <div className="card-section" id="schedule">
                                 <h1>Programação</h1>
                                 <div className="col">
-                                    <span className="info-label">Live de aquecimento 1:</span>
-                                    <span className="info-label">Live de aquecimento 2:</span>
-                                    <span className="info-label">Abertura do hackathon:</span>
-                                    <span className="info-label">Início de mentoria:</span>
-                                    <span className="info-label">Submissão de projetos:</span>
-                                    <span className="info-label">Período de avaliação:</span>
-                                    <span className="info-label">Divulgação dos projetos:</span>
+                                    <span className="info-label">
+                                        Live de aquecimento 1:{" "}
+                                        <span className="info-value">
+                                            {moment(targetEvent.startDate).subtract(2, "days").set({ hour: 19, minute: 30 }).format("LLL")}
+                                        </span>
+                                    </span>
+                                    <span className="info-label">
+                                        Live de aquecimento 2:{" "}
+                                        <span className="info-value">
+                                            {moment(targetEvent.startDate).subtract(1, "days").set({ hour: 19, minute: 30 }).format("LLL")}
+                                        </span>
+                                    </span>
+                                    <span className="info-label">
+                                        Abertura do hackathon: <span className="info-value">{moment(targetEvent.endSubDate).format("LLL")}</span>
+                                    </span>
+                                    <span className="info-label">
+                                        Início de mentoria:{" "}
+                                        <span className="info-value">{moment(targetEvent.startDate).add(18, "hours").format("LLL")}</span>
+                                    </span>
+                                    <span className="info-label">
+                                        Submissão de projetos:{" "}
+                                        <span className="info-value">
+                                            {moment(targetEvent.startDate).endOf("isoWeek").set({ hour: 23, minute: 0 }).format("LLL")}
+                                        </span>
+                                    </span>
+                                    <span className="info-label">
+                                        Início do período de avaliação:{" "}
+                                        <span className="info-value">
+                                            {moment(targetEvent.startDate).endOf("isoWeek").add(1, "days").startOf("day").format("LLL")}
+                                        </span>
+                                    </span>
+                                    <span className="info-label">
+                                        Fim do período de avaliação:{" "}
+                                        <span className="info-value">
+                                            {moment(targetEvent.startDate).endOf("isoWeek").add(2, "days").endOf("day").format("LLL")}
+                                        </span>
+                                    </span>
+                                    <span className="info-label">
+                                        Divulgação dos projetos:{" "}
+                                        <span className="info-value">
+                                            {moment(targetEvent.startDate).endOf("isoWeek").add(3, "days").set({ hour: 12, minute: 0 }).format("LLL")}
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
