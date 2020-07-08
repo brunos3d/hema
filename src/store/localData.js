@@ -1,5 +1,6 @@
 const defaultData = [
     {
+        id: "x98asd98a",
         name: "Mega Hack 3.0",
         imgUrl: "MEGA-HACK.png",
         startSubDate: "2020-07-01",
@@ -17,6 +18,7 @@ const defaultData = [
         hasMinParticipantsTeam: false,
     },
     {
+        id: "5s8f4e2q",
         name: "Hackathon Santander",
         imgUrl: "SANTANDER-DATA-CHALLENGE.png",
         startSubDate: "2020-07-09",
@@ -34,6 +36,7 @@ const defaultData = [
         hasMinParticipantsTeam: false,
     },
     {
+        id: "8a6d9fd5e8",
         name: "Hacka TecBan",
         imgUrl: "TECBAN.png",
         startSubDate: "2020-07-18",
@@ -51,6 +54,7 @@ const defaultData = [
         hasMinParticipantsTeam: false,
     },
     {
+        id: "a7s5f1q",
         name: "Desafio Eugene Challenge",
         imgUrl: "EUGENIO.png",
         startSubDate: "2020-07-11",
@@ -68,6 +72,7 @@ const defaultData = [
         hasMinParticipantsTeam: false,
     },
     {
+        id: "a6sv6w5q",
         name: "Hacka A Rocket",
         imgUrl: "HACK-A-ROCKET.png",
         startSubDate: "2020-07-11",
@@ -89,7 +94,7 @@ const defaultData = [
 export function getEvents() {
     const localData = localStorage.getItem("events");
 
-    if (localData) {
+    if (localData && localData.length > 0) {
         const events = JSON.parse(localData);
         if (Array.isArray(events)) {
             return events;

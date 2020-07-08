@@ -7,7 +7,7 @@ import moment from "../../store/moment";
 import { getEvents } from "../../store/localData";
 
 function HackathonRoute({ match }) {
-    const targetEvent = getEvents()[match.params.id];
+    const targetEvent = getEvents().find((event) => event.id === match.params.id);
 
     targetEvent.startDate = moment(targetEvent.startDate);
     targetEvent.endDate = moment(targetEvent.endDate);
@@ -169,7 +169,12 @@ function HackathonRoute({ match }) {
                                     <span className="info-label">
                                         Início do período de avaliação:{" "}
                                         <span className="info-value">
-                                            {moment(targetEvent.startDate).endOf("isoWeek").add(1, "days").startOf("day").format("LLL")}
+                                            {moment(targetEvent.startDate)
+                                                .endOf("isoWeek")
+                                                .add(1, "days")
+                                                .startOf("day")
+                                                .set({ hour: 10, minute: 0 })
+                                                .format("LLL")}
                                         </span>
                                     </span>
                                     <span className="info-label">

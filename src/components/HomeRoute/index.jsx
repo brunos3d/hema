@@ -15,7 +15,21 @@ const HomeRoute = () => {
         if (trimmedSearch.length > 0) {
             setEvents(
                 updatedEvents.filter(
-                    (event) => Object.values(event).filter((value) => value.toString().toUpperCase().includes(trimmedSearch.toUpperCase())).length > 0
+                    (event) =>
+                        Object.values(event).filter(
+                            (value) =>
+                                value.toString().toUpperCase().includes(trimmedSearch.toUpperCase()) ||
+                                value
+                                    .toString()
+                                    .replace(/[^\w\s]/gi, "")
+                                    .toUpperCase()
+                                    .includes(trimmedSearch.replace(/[^\w\s]/gi, "").toUpperCase()) ||
+                                (moment(value.toString(), "YYYY-MM-DD").isValid() &&
+                                    moment(value.toString(), "YYYY-MM-DD")
+                                        .format("DDMMYYYYhhmmss")
+                                        .toUpperCase()
+                                        .includes(trimmedSearch.replace(/[^\w\s]/gi, "")))
+                        ).length > 0
                 )
             );
         } else {
@@ -26,7 +40,13 @@ const HomeRoute = () => {
     return (
         <Container>
             <div className="search-container">
-                <input className="search" type="text" placeholder="Pesquisar..." value={search} onChange={(event) => setSearch(event.target.value)} />
+                <input
+                    className="search"
+                    type="text"
+                    placeholder="Procure por nomes, tipos de hackas, datas e outras coisas..."
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                />
                 <Link className="btn-create-event" to="/hackathons/create">
                     Novo evento
                 </Link>
@@ -34,7 +54,7 @@ const HomeRoute = () => {
             <div className="events-container">
                 {events &&
                     events.map((event, index) => (
-                        <Link className="event-card" to={`/hackathons/${index}`} key={index}>
+                        <Link className="event-card" to={`/hackathons/${event.id}`} key={index}>
                             <img className="event-logo" src={`${process.env.PUBLIC_URL}/img/${event.imgUrl || "MEGA-HACK.png"}`} alt="event-logo" />
                             <h1>{event.name}</h1>
                             <div className="row" style={{ marginTop: "10px" }}>

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Form } from "@unform/web";
+import { nanoid } from "nanoid";
 
 import { Container } from "./styles";
 
@@ -15,6 +16,7 @@ const HackathonCreateRoute = () => {
     const [hasMinParticipantsTeam, setHasMinParticipantsTeam] = useState(false);
 
     function handleSubmit(data) {
+        data.id = nanoid(10);
         data.eventType = eventType;
         data.useRankPoints = useRankPoints;
         data.hasMinParticipantsTeam = hasMinParticipantsTeam;
@@ -69,21 +71,21 @@ const HackathonCreateRoute = () => {
                         <div className="row" style={{ marginTop: "20px" }}>
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "10px" }}>Início das inscrições</span>
-                                <Input className="input-text" name="startSubDate" type="datetime" />
+                                <Input className="input-text" name="startSubDate" type="datetime-local" />
                             </div>
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "20px" }}>Encerramento das inscrições</span>
-                                <Input className="input-text" name="endSubDate" type="datetime" style={{ marginLeft: "10px" }} />
+                                <Input className="input-text" name="endSubDate" type="datetime-local" style={{ marginLeft: "10px" }} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "10px" }}>Início do hacakthon</span>
-                                <Input className="input-text" name="startDate" type="datetime" />
+                                <Input className="input-text" name="startDate" type="datetime-local" />
                             </div>
                             <div className="col" style={{ flex: 1 }}>
                                 <span style={{ marginLeft: "20px" }}>Encerramento do hacakthon</span>
-                                <Input className="input-text" name="endDate" type="datetime" style={{ marginLeft: "10px" }} />
+                                <Input className="input-text" name="endDate" type="datetime-local" style={{ marginLeft: "10px" }} />
                             </div>
                         </div>
 
